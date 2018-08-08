@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <strong>{{$publication->title}}</strong> - {{$publication->author}}
-    <em>{{$publication->datepub}}</em>
+@extends('layouts.master')
+
+@section('title', 'School Publication')
+
+@section('content')
+
+ <div class="blog-post">
+            <h2 class="blog-post-title">{{$publication->title}}</h2>
+            <p class="blog-post-meta">{{$publication->datepub}} by <a href="#">{{$publication->author}}</a></p>
+
     <p>{{$publication->body}}</p>
-</body>
-</html>
+</div>
+@endsection

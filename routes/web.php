@@ -26,6 +26,8 @@ Route::get('/about', 'PagesController@about');
 //Route::get('/', 'PageController@index');
 
 Route::get('/publications', 'PublicationController@index');
+Route::get('/publications/create', 'PublicationController@create');
+Route::post('/publications/store', 'PublicationController@store');
 
 //Route::get('publications/{$id}', 'PublicationController@show');
 

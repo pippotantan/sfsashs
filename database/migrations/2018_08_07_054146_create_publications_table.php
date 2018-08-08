@@ -19,7 +19,8 @@ class CreatePublicationsTable extends Migration
             $table->string('author');
             $table->date('datepub');
             $table->longText('body');
-            $table->boolean('approved');
+            $table->string('pubpic');
+            $table->boolean('approved')->default(false);
             $table->timestamps();
         });
     }
