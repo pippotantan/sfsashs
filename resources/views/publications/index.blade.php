@@ -12,43 +12,42 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
+    @endif
 
-        <script>
+    @if($publications)
+       
+            <div class="jumbotron">
+                <h1>School Publications</h1>
+                {{ $publications->links() }}
+                <div class="card-columns">
+                @foreach($publications as $publication)
+                
+                    <div class="card">
+                        <img class="card-img-top" src="{{ asset("../images/") }}/{{$publication->pubpic}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$publication->title}}</h5>
+                            <p class="text-muted"><small>{{$publication->datepub}}</small></p>        
+                            <p class="card-text">{{substr($publication->body, 0, 150)}}...
+                            <small><a href="/publications/{{$publication->id}}">continue reading</a></small>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">by: {{$publication->author}}</small>
+                        </div>
+                </div>
+                @endforeach
+                </div>
+           </div>
+            
+            {{ $publications->links() }}
+    @endif
+    <script>
             window.setTimeout(function() {
                 $(".alert").fadeTo(500, 0).slideUp(500, function(){
                 $(this).remove(); 
                 });
             }, 4000);
-        </script>
-    @endif
-
-    @if($publications)
-        <h1>School Publications</h1>
-        {{ $publications->links() }}
-        <ul>
-            
-            @foreach($publications as $publication)
-                <!--<li><a href="/publications/{{$publication->id}}">{{$publication->title}}</a></li>-->  
-
-            <div class="col-md-5">
-            <div class="card flex-md-row mb-2 box-shadow h-md-250">
-                <div class="card-body d-flex flex-column align-items-start">
-                <strong class="d-inline-block mb-2 text-primary">{{$publication->author}}</strong>
-                <h3 class="mb-0">
-                    <a class="text-dark" href="#">{{$publication->title}}</a>
-                </h3>
-                <div class="mb-1 text-muted">{{$publication->datepub}}</div>
-                <p class="card-text mb-auto">{{substr($publication->body, 0, 100)}}...</p>
-                <a href="/publications/{{$publication->id}}">Continue reading</a>
-                </div>
-                <img class="card-img-right flex-auto d-none d-md-block img-thumbnail" src="{{ asset("../images/") }}/{{$publication->pubpic}}" alt="Image">
-            </div>
-            </div>      
-            @endforeach
-           
-            </ul>
-            {{ $publications->links() }}
-    @endif
+    </script>
 @endsection
 
         

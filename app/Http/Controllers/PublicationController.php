@@ -12,7 +12,7 @@ class PublicationController extends Controller
 
         //$publications = Publication::all();
         //$publications = User::where('approved', '=', true)->paginate(5);
-        $publications = Publication::paginate(5);
+        $publications = Publication::orderBy('datepub', 'desc')->paginate(5);
         return view('publications.index', compact('publications'));
     }
 
