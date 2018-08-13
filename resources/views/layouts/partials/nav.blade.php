@@ -1,6 +1,7 @@
 
       
       <nav class="navbar navbar-expand-xl navbar-light bg-white">
+      <a class="navbar-brand" href="#" style="color: red;">LOGO</a>
       <h5 class="my-0 mr-md-auto font-weight-normal">STA. FE STAND-ALONE SHS</h5>
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link" href="#">Students</a></li>
@@ -17,7 +18,7 @@
 
 
 <nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top">
-    <a class="navbar-brand" href="#" style="color: red;">LOGO</a>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFull" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
