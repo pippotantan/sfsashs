@@ -1,31 +1,70 @@
-<nav class="navbar navbar-expand-xl sticky-top navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Santa Fe Stand-Alone SHS</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+
+      
+      <nav class="navbar navbar-expand-xl navbar-light bg-white">
+      <h5 class="my-0 mr-md-auto font-weight-normal">STA. FE STAND-ALONE SHS</h5>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Students</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Parents</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Teachers</a></li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+      
+
+
+
+<nav class="navbar navbar-expand-xl navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#" style="color: red;">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFull" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarFull">
+        <ul class="navbar-nav">
+
             <li class="nav-item active">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/about">About</a>
-            </li>
-            
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="strand_sub" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Strands
+
+            <li class="nav-item dropdown position-static">
+                <a class="nav-link dropdown-toggle" href="#" id="navStrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Strands
                 </a>
-                <div class="dropdown-menu" aria-labelledby="strand_sub">
-                <a class="dropdown-item" href="#">ABM</a>
-                <a class="dropdown-item" href="#">Caregiving</a>
-                <a class="dropdown-item" href="#">ICT - Programming</a>
+                <div class="dropdown-menu w-100" aria-labelledby="navStrand">
+                    <a class="dropdown-item" href="#">Accountancy Business and Management</a>
+                    <a class="dropdown-item" href="#">ICT-Computer Sysytems Servicing</a>
+                    <a class="dropdown-item" href="#">ICT-Computer Programming</a>
+                    <a class="dropdown-item" href="#">General Academic Strand</a>
+                    <a class="dropdown-item" href="#">Organic Agriculture</a>
+                    <a class="dropdown-item" href="#">Caregiving</a>
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item bg-light text-black">BE ONE OF OUR FUTURE PROFESSIONALS</div>
                 </div>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item dropdown position-static">
+                <a class="nav-link dropdown-toggle" href="#" id="navGlance" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Our School at Glance
+                </a>
+                <div class="dropdown-menu w-100" aria-labelledby="navGlance">
+                    <a class="dropdown-item" href="#">History</a>
+                    <a class="dropdown-item" href="#">Mission & Vision</a>
+                    <a class="dropdown-item" href="#">Faculty & Staff</a>
+                    <a class="dropdown-item" href="#">Gallery</a>           
+                    <div class="dropdown-divider"></div>
+                    <div class="dropdown-item bg-light text-black">SIMPLY THE BEST</div>
+                </div>
+            </li>
+
+             <li class="nav-item">
                 <a class="nav-link" href="/publications">News Pub</a>
             </li>
-            
-            </ul>
-        </div>
+
+        </ul>
+    </div>
 </nav>
+
+
