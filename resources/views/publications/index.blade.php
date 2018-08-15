@@ -37,9 +37,10 @@
                 </div>
                 @endforeach
                 </div>
+                {{ $publications->links() }}
            </div>
             
-            {{ $publications->links() }}
+           
     @endif
     <script>
             window.setTimeout(function() {
