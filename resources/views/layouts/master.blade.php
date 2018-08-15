@@ -14,14 +14,11 @@
         <title>Sta. Fe Stand-Alone SHS - @yield('title')</title>
     
     <body>
-
-       @include('layouts.partials.nav')
-       
-        <div class='container-fluid'>
-            @yield('content')
-        </div>
-
+    <div class='container-fluid'>
+        @include('layouts.partials.nav')
+        @yield('content')
         @include('layouts.partials.footer')
+    </div>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
     </body>

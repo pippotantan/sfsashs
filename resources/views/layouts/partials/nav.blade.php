@@ -1,15 +1,20 @@
 
-      
-    <nav class="navbar navbar-expand-xl navbar-dark bg-dark">
+    <!-- Grid Top -->
+    <div style="background-color: dodgerblue;" class="container-fluid text-center text-md-right">
+        <a href="" class="text-dark mr-3"><i class="fa fa-lock"></i> Login</a>
+    </div>
+    <!--End Top-->
+        
+    <div class="navbar navbar-expand-xl navbar-light bg-white p-3 border-bottom border-info">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHead" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     
         <div class="collapse navbar-collapse" id="navbarHead">
             <a class="navbar-brand" href="#" style="color: red;">
-            <img src="{{ asset("../layoutpic/") }}/logo96.png" alt="logo" class="img-fluid rounded-circle hoverable">
+            <img src="{{ asset("../layoutpic/") }}/logo96.png" alt="logo" class="img-fluid rounded-circle hoverable shadow">
             </a>
-            <h3 class="my-0 mr-md-auto font-weight-normal white-text">STA. FE STAND-ALONE SHS</h3>
+            <h3 class="my-0 mr-md-auto font-weight-normal font-weight-bold">STA. FE STAND-ALONE SHS</h3>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#">Students</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Parents</a></li>
@@ -20,12 +25,12 @@
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
             </form>
         </div>
-    </nav>
+    </div>
       
 
 
 
-<nav class="navbar navbar-expand-xl navbar-light bg-white sticky-top">
+<nav class="shadow-lg navbar navbar-expand-xl navbar-light bg-white sticky-top">
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFull" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

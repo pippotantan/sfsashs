@@ -1,43 +1,7 @@
 <!-- Footer -->
-<footer class="page-footer font-small unique-color-dark">
+<footer class="page-footer font-small unique-color-dark border-top border-info">
 
-    <div style="background-color: dodgerblue;">
-      <div class="container">
-
-        <!-- Grid row-->
-        <div class="row py-4 d-flex align-items-center">
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-            <h6 class="mb-0">Connect with us!</h6>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-6 col-lg-7 text-center text-md-right">
-
-            <!-- Facebook -->
-            <a href="#">
-              <i class="fas fa-facebook-square"> </i>
-            </a>
-            <!-- Twitter -->
-            <a href="#">
-              <i class="fas fa-twitter mr-4"> </i>
-            </a>
-            <!-- Google +-->
-            <a href="#">
-              <i class="fas fa-google-plus-square mr-4"> </i>
-            </a>
-            
-          </div>
-          <!-- Grid column -->
-
-        </div>
-        <!-- Grid row-->
-
-      </div>
-    </div>
-
+    
     <!-- Footer Links -->
     <div class="container text-center text-md-left mt-5">
 
@@ -48,10 +12,15 @@
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
           <!-- Content -->
-          <h6 class="text-uppercase font-weight-bold">Sta. Fe Stand-Alone SHS</h6>
+          <h6 class="text-uppercase font-weight-bold">Resources</h6>
           <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>Barangay Pilit, Sta. Fe, Leyte
-          6513 Philippines</p>
+          <p>
+            <a href="#!"><i class="fa fa-chart-bar"></i> Resources 1</a>
+          </p>
+          <p>
+            <a href="#!"><i class="fa fa-code"></i> Resources 2</a>
+          </p>
+          
         </div>
         <!-- Grid column -->
 
@@ -86,7 +55,7 @@
         <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
           <!-- Links -->
-          <h6 class="text-uppercase font-weight-bold">Links</h6>
+          <h6 class="text-uppercase font-weight-bold">Useful Links</h6>
           <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
           <p>
             <a href="#!">Link 1</a>
@@ -130,7 +99,7 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© {{now()->year}} Copyright:
+    <div class="footer-copyright text-center py-3 bg-dark text-white">© {{now()->year}} Copyright:
       <a href="#">SFSASHS</a>
     </div>
     <!-- Copyright -->
