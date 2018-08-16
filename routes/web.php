@@ -21,7 +21,7 @@ Route::get('/', function () {
 */
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
-
+Route::get('/faculty', 'PagesController@faculty');
 
 //Route::get('/', 'PageController@index');
 

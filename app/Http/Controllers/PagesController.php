@@ -18,5 +18,10 @@ class PagesController extends Controller
         return view('about', compact('location'));
     }
 
+    public function faculty()
+    {
+        //$location = 'about';
+        return view('team', compact('location'));
+    }
 
 }

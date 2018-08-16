@@ -1,6 +1,6 @@
 
     <!-- Grid Top -->
-    <div style="background-color: dodgerblue;" class="container-fluid text-center text-md-right">
+    <div style="background: linear-gradient(to bottom, rgba(40, 180, 200, 1), rgba(255,255,255,1));" class="container-fluid text-center text-md-right mt-0">
         <a href="" class="text-dark mr-3"><i class="fa fa-lock"></i> Login</a>
     </div>
     <!--End Top-->
@@ -30,7 +30,7 @@
 
 
 
-<nav class="shadow-lg navbar navbar-expand-xl navbar-light bg-white sticky-top">
+<nav class="navbar navbar-expand-xl navbar-light sticky-top" style="background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(40, 180, 200, .9));">
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFull" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navStrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user-graduate"></i> Strands
                 </a>
-                <div class="dropdown-menu w-100" aria-labelledby="navStrand">
+                <div class="dropdown-menu w-100 text-black mt-0" aria-labelledby="navStrand" style="background-color:rgba(40, 180, 200, 0.9);">
                     <a class="dropdown-item" href="#">Accountancy Business and Management</a>
                     <a class="dropdown-item" href="#">ICT-Computer Sysytems Servicing</a>
                     <a class="dropdown-item" href="#">ICT-Computer Programming</a>
@@ -55,21 +55,21 @@
                     <a class="dropdown-item" href="#">Organic Agriculture</a>
                     <a class="dropdown-item" href="#">Caregiving</a>
                     <div class="dropdown-divider"></div>
-                    <div class="dropdown-item bg-light text-black">BE ONE OF OUR FUTURE PROFESSIONALS</div>
+                    <div class="bg-dark text-white pl-2 font-weight-bold">BE ONE OF OUR FUTURE PROFESSIONALS</div>
                 </div>
             </li>
 
             <li class="nav-item dropdown position-static">
                 <a class="nav-link dropdown-toggle" href="#" id="navGlance" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-school"></i> Our School at Glance
+                <i class="fa fa-school"></i> School at a Glance
                 </a>
-                <div class="dropdown-menu w-100" aria-labelledby="navGlance">
+                <div class="dropdown-menu w-100 mt-0" aria-labelledby="navGlance" style="background-color:rgba(40, 180, 200, 0.9);">
                     <a class="dropdown-item" href="#">History</a>
                     <a class="dropdown-item" href="#">Mission & Vision</a>
-                    <a class="dropdown-item" href="#">Faculty & Staff</a>
+                    <a class="dropdown-item" href="/faculty">Faculty & Staff</a>
                     <a class="dropdown-item" href="#">Gallery</a>           
                     <div class="dropdown-divider"></div>
-                    <div class="dropdown-item bg-light text-black">SIMPLY THE BEST</div>
+                    <div class="bg-dark text-white pl-2 font-weight-bold">SIMPLY THE BEST</div>
                 </div>
             </li>
 
