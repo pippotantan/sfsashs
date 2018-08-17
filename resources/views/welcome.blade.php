@@ -8,13 +8,13 @@
 <div class="row my-4">
         <div class="col-lg-8">
         <!-- Carousel-->
-        <div id="demo" class="carousel slide" data-ride="carousel">
+        <div id="main" class="carousel slide" data-ride="carousel">
 
             <!-- Indicators -->
             <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
+            <li data-target="#main" data-slide-to="0" class="active"></li>
+            <li data-target="#main" data-slide-to="1"></li>
+            <li data-target="#main" data-slide-to="2"></li>
             </ul>
 
             <!-- The slideshow -->
@@ -43,10 +43,10 @@
             </div>
 
             <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <a class="carousel-control-prev" href="#main" data-slide="prev">
             <span class="carousel-control-prev-icon"></span>
             </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
+            <a class="carousel-control-next" href="#main" data-slide="next">
             <span class="carousel-control-next-icon"></span>
             </a>
 
