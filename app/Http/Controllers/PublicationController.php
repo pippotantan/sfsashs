@@ -30,6 +30,7 @@ class PublicationController extends Controller
 
     public function store(Request $request)
     {
+        $name="none";
         if($request->hasfile('filename'))
         {
            $file = $request->file('filename');
@@ -43,11 +44,48 @@ class PublicationController extends Controller
        $publication->body=$request->get('body');
        $publication->pubpic=$name;
        
+       
        //$publication->pub_pic=$name;rrr
        $publication->save();
        //\Session::flash('flash_message','Article successfully published.'); //<--FLASH MESSAGE
         $m = 'Article ' . $request->get('title'). ' published successfully!';
        return redirect('publications')->with('success', $m);
    }
+
+    public function edit($id)
+    {
+        $publication = Publication::find($id);
+        return view('publications.edit',compact('publication','id'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $publication= Publication::find($id);
+        $name="";
+         if($request->hasfile('filename'))
+        {
+                $file = $request->file('filename');
+                $name=time().$file->getClientOriginalName();
+                $file->move(public_path().'/images/', $name);
+        }
+        
+            $publication->title=$request->get('title');
+            $publication->author=$request->get('author');
+            $publication->datepub=$request->get('datepub');
+            $publication->body=$request->get('body');
+            if(!$name==""){$publication->pubpic=$name;}
+            $publication->save();
+            $m = 'Article ' . $request->get('title'). ' updated successfully!';
+            return redirect('publications')->with('success', $m);;
+    }
+
+    public function destroy($id)
+    {
+        $publication = Publication::find($id);
+        $publication->delete();
+        $m = 'Article ' . $publication['title'] . ' deleted successfully!';
+        return redirect('publications')->with('success',$m);
+    }
+
     
 }
