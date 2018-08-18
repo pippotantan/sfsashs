@@ -1,12 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Image;
+use Validator;
 use Illuminate\Http\Request;
 use App\Publication;
 
 class PublicationController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index', 'show');
+
+       // $this->middleware('log')->only('index');
+
+        //$this->middleware('subscribed')->except('store');
+    }
+
     public function index()
     {
 
@@ -30,13 +41,44 @@ class PublicationController extends Controller
 
     public function store(Request $request)
     {
-        $name="none";
-        if($request->hasfile('filename'))
-        {
-           $file = $request->file('filename');
-           $name=time().$file->getClientOriginalName();
-           $file->move(public_path().'/images/', $name);
+        $validator = Validator::make($request->all(), [
+            'filename' => 'image|required|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('publications/create')
+                        ->withErrors($validator)
+                        ->withInput();
         }
+        
+/*
+        $this->validate($request, [
+            'filename' => 'image|required|mimes:jpeg,png,jpg,gif,svg'
+        ],
+         [
+            'filename.required' => 'only the following image type is allowed: jpeg,png,jpg,gif & svg',
+            'filename.required' => 'publication image is required'
+        ])->withInput();
+*/
+        $name="none";
+
+        //if($request->hasfile('filename'))
+        //{
+           //$file = $request->file('filename');
+           //$name=time().$file->getClientOriginalName();
+           //$file->move(public_path().'/images/', $name);
+
+           $originalImage= $request->file('filename');
+           $name=time().$originalImage->getClientOriginalName();
+           $thumbnailImage = Image::make($originalImage);
+           $thumbnailPath = public_path().'/images/thumbnail/';
+           $originalPath = public_path().'/images/';
+           $thumbnailImage->save($originalPath.$name);
+           $thumbnailImage->resize(150,150);
+           $thumbnailImage->save($thumbnailPath.$name); 
+   
+        //}
+        
        $publication= new \App\Publication;
        $publication->title=$request->get('title');
        $publication->author=$request->get('author');
@@ -60,6 +102,17 @@ class PublicationController extends Controller
 
     public function update(Request $request, $id)
     {
+
+        $validator = Validator::make($request->all(), [
+            'filename' => 'image|required|mimes:jpeg,png,jpg,gif,svg',
+        ]);
+
+        if ($validator->fails()) {
+            return back()
+            ->withErrors($validator)
+            ->withInput();
+        }
+
         $publication= Publication::find($id);
         $name="";
          if($request->hasfile('filename'))

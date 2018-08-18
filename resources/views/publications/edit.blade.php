@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('title', 'School Publication')
@@ -6,6 +7,18 @@
 
 <div class="container">
       <h2>Publish New Article</h2><br/>
+
+      @if (count($errors) > 0)
+      <div class="alert alert-danger">
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
+
       <form method="post" action="{{action('PublicationController@update', $id)}}" enctype="multipart/form-data">
        
         @csrf
@@ -14,7 +27,7 @@
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
             <label for="title">Title:</label>
-            <input type="text" class="form-control" name="title" value="{{$publication->title}}" required>
+            <input type="text" class="form-control" name="title" value="{{$publication->title, old('title')}}" required>
         </div>
         </div>
         

@@ -14,6 +14,17 @@
         </div>
     @endif
 
+     @if (count($errors) > 0)
+      <div class="alert alert-danger">
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+          @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      </div>
+      @endif
+
     @if($publications)
        
             <div class="jumbotron">
@@ -23,7 +34,7 @@
                 @foreach($publications as $publication)
                 
                     <div class="card">
-                        <img class="card-img-top" src="{{ asset("../images/") }}/{{$publication->pubpic}}" alt="{{$publication->title}}">
+                        <img class="card-img-top" src="{{ asset("../images/thumbnail/") }}/{{$publication->pubpic}}" alt="{{$publication->title}}">
                         <div class="card-body">
                             <h5 class="card-title">{{$publication->title}}</h5>
                             <p class="text-muted"><small>{{$publication->datepub}}</small></p>        
@@ -34,6 +45,7 @@
                         <div class="card-footer">
                             
                             <small class="text-muted">by: {{$publication->author}}</small>
+                            @auth
                                 <p><a href="{{action('PublicationController@edit', $publication->id)}}" class="btn btn-warning">Edit</a>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDel">
@@ -67,7 +79,8 @@
                                             </div>
                                             </div>
                                         </div>
-                                        </div>  
+                                        </div> 
+                        @endauth 
                         <!--end delete modal-->
                         </div>
                 </div>

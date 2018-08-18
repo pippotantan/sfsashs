@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +20,7 @@ Route::get('/', function () {
 */
 Route::get('/', 'PagesController@index');
 Route::get('/about', 'PagesController@about');
-Route::get('/faculty', 'PagesController@faculty');
+Route::get('/faculty', 'PagesController@faculty');//->middleware('auth');
 
 //Route::get('/', 'PageController@index');
 
@@ -34,3 +33,6 @@ Route::get('/faculty', 'PagesController@faculty');
 //Route::get('publications/{id}', 'PublicationController@show');
 
 route::resource('publications','PublicationController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
