@@ -35,7 +35,7 @@
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
             <label for="author">Author:</label>
-            <input type="text" class="form-control" name="author" value="{{$publication->author}}" required>
+            <input type="text" class="form-control" name="author" value="{{$publication->author, old('author')}}" required>
         </div>
         </div>
         
@@ -43,7 +43,7 @@
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
             <label for="datepub">Date Published:</label>
-            <input type="date" class="form-control" name="datepub" value="{{$publication->datepub}}" required>
+            <input type="date" class="form-control" name="datepub" value="{{$publication->datepub, old('datepub')}}" required>
         </div>
         </div>
 
@@ -51,7 +51,7 @@
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
             <label for="body">Body:</label>
-            <textarea type="text" class="form-control" name="body" required>{{$publication->body}}</textarea>
+            <textarea id = "body" type="text" class="form-control" name="body" required>{{$publication->body, old('body')}}</textarea>
         </div>
         </div>
         
@@ -67,6 +67,7 @@
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="margin-top:60px">
             <button type="submit" class="btn btn-success">Update</button>
+            <a class="btn btn-info" href="/publications/">Cancel</a>
           </div>
         </div>
       </form>

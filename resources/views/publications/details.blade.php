@@ -21,7 +21,7 @@
           <hr>
 
           <!-- Post Content -->
-          <p class="lead">{{$publication->body}}</p>
+          <p class="lead">{!!$publication->body!!}</p>
 
           
 

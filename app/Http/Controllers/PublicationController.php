@@ -5,6 +5,8 @@ use Image;
 use Validator;
 use Illuminate\Http\Request;
 use App\Publication;
+use Illuminate\Support\Facades\File;
+
 
 class PublicationController extends Controller
 {
@@ -73,9 +75,16 @@ class PublicationController extends Controller
            $thumbnailImage = Image::make($originalImage);
            $thumbnailPath = public_path().'/images/thumbnail/';
            $originalPath = public_path().'/images/';
+           $thumbnailImage->heighten(180, function ($constraint){
+            $constraint->upsize();
+        });
+          // $thumbnailImage->resize(150,82.5);
+          
            $thumbnailImage->save($originalPath.$name);
-           $thumbnailImage->resize(150,150);
-           $thumbnailImage->save($thumbnailPath.$name); 
+           $thumbnailImage->heighten(200, function ($constraint){
+            $constraint->upsize();
+        });
+            $thumbnailImage->save($thumbnailPath.$name); 
    
         //}
         
@@ -115,13 +124,35 @@ class PublicationController extends Controller
 
         $publication= Publication::find($id);
         $name="";
-         if($request->hasfile('filename'))
-        {
-                $file = $request->file('filename');
-                $name=time().$file->getClientOriginalName();
-                $file->move(public_path().'/images/', $name);
+      
+        if($request->hasfile('filename')){
+            $oldImageThumb = public_path().'/images/thumbnail/'.$publication->pubpic; // get previous image from folder
+            $oldImageOrig = public_path().'/images/'.$publication->pubpic;
+            @unlink($oldImageThumb); //delete thumnail and original image respectively
+            @unlink($oldImageOrig);
         }
+      
         
+           //create;
+
+           $originalImage= $request->file('filename');
+           $name=time().$originalImage->getClientOriginalName();
+           $thumbnailImage = Image::make($originalImage);
+           $thumbnailPath = public_path().'/images/thumbnail/';
+           $originalPath = public_path().'/images/';
+           $thumbnailImage->heighten(180, function ($constraint){
+            $constraint->upsize();
+        });
+          
+           $thumbnailImage->save($originalPath.$name);
+           $thumbnailImage->heighten(200, function ($constraint){
+            $constraint->upsize();
+        });
+            $thumbnailImage->save($thumbnailPath.$name); 
+   
+        //}
+
+                
             $publication->title=$request->get('title');
             $publication->author=$request->get('author');
             $publication->datepub=$request->get('datepub');

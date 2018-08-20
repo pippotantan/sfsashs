@@ -19,12 +19,26 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
     <body>
+        
     <div class='container-fluid'>
+    
         @include('layouts.partials.nav')
         @yield('content')
         @include('layouts.partials.footer')
     </div>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
+        <!-- Alert -->
+        <script>
+            window.setTimeout(function() {
+                $(".jojofader").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove(); 
+                });
+            }, 4000);
+        </script>
+
+        <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
+21      <script>CKEDITOR.replace('body');</script>
+
     </body>
 </html>

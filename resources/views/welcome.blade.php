@@ -3,6 +3,8 @@
 @section('title', 'Home')
 
 @section('content')
+
+    
 <!--Main Content-->
 <!-- Heading Row -->
 <div class="row my-4">

@@ -48,7 +48,7 @@
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
             <label for="body">Body:</label>
-            <textarea type="text" class="form-control" name="body" required>{{ old('body') }}</textarea>
+            <textarea id="body" type="text" class="form-control" name="body" required>{{ old('body') }}</textarea>
         </div>
         </div>
         
