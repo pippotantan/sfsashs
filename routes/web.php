@@ -36,3 +36,5 @@ route::resource('publications','PublicationController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/comment/store', 'CommentController@store')->name('comment.add');
+Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');

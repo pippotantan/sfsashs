@@ -16,12 +16,18 @@
         <link rel="icon" href="{{ asset("../images/") }}/favicon.ico">
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
-    <body>
         
-    <div class='container-fluid'>
+    <body>
+            <div class="icon-bar lambong">
+                    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+                    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+                    <a href="#" class="google"><i class="fa fa-google"></i></a> 
+                    <!--  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>-->
+                    <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
+            </div>
     
+    <div class='container px-2'>
+                    
         @include('layouts.partials.nav')
         @yield('content')
         @include('layouts.partials.footer')
@@ -38,7 +44,7 @@
         </script>
 
         <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
-21      <script>CKEDITOR.replace('body');</script>
+      <script>CKEDITOR.replace('body');</script>
 
     </body>
 </html>

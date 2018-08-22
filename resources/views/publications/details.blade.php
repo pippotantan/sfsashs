@@ -1,5 +1,11 @@
 @extends('layouts.master')
 
+<style>
+    .display-comment {
+        margin-left: 40px
+    }
+</style>
+
 @section('title', 'School Publication')
 
 @section('content')
@@ -23,59 +29,7 @@
           <!-- Post Content -->
           <p class="lead">{!!$publication->body!!}</p>
 
-          
-
-          <hr>
-
-          <!-- Comments Form -->
-          <div class="card my-4">
-            <h5 class="card-header">Leave a Comment:</h5>
-            <div class="card-body">
-              <form>
-                <div class="form-group">
-                  <textarea class="form-control" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-            </div>
-          </div>
-
-          <!-- Single Comment -->
-          <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
-          </div>
-
-          <!-- Comment with nested comments -->
-          <div class="media mb-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-              <h5 class="mt-0">Commenter Name</h5>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-              <div class="media mt-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                  <h5 class="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
-
-              <div class="media mt-4">
-                <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                <div class="media-body">
-                  <h5 class="mt-0">Commenter Name</h5>
-                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
+        </div>    
 
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
@@ -140,5 +94,49 @@
 
       </div>
       <!-- /.row -->
-<!--end new layout>
+      
+          <!--comment area-->
+          
+        @if( @$commentCount > 1 )
+          <small class="text-muted">{{$commentCount}} comments</small>
+        @elseif( @$commentCount == 1 )
+          <small class="text-muted">{{$commentCount}} comment</small>
+        @else
+          <small class="text-muted">Be the first to comment on this article!</small>
+        @endif
+
+      <div class="w-50">
+                <hr />
+                    @auth
+                    <p>Comment as <small class="text-muted">{{ Auth::user()->name }}</p></p>
+                    <form method="post" action="{{ route('comment.add') }}">
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" name="comment_body" class="form-control" />
+                            <input type="hidden" name="pub_id" value="{{ $publication->id }}" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-warning btn-sm" value="Post Comment" />
+                        </div>
+                    </form>
+                    @else
+                    
+                    <a class="btn btn-info btn-sm" href="{{ route('login') . '?previous=' . Request::fullUrl() }}">
+                        Login to comment...
+                    </a>
+                    @endauth
+
+                          @include('layouts.partials._comment_replies', ['comments' => $publication->comments, 'pub_id' => $publication->id])
+          
+                    <!--single comment
+                    @foreach($publication->comments as $comment)
+                        <div class="display-comment">
+                            <strong>{{ $comment->user->name }}</strong>
+                            <p>{{ $comment->body }}</p>
+                        </div>
+                    @endforeach
+                    -->
+          </div>
+          <!--end comment area-->
+<!--end new layout-->
 @endsection

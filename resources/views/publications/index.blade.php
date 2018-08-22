@@ -46,10 +46,10 @@
                             
                             <small class="text-muted">by: {{$publication->author}}</small>
                             @auth
-                                <p><a href="{{action('PublicationController@edit', $publication->id)}}" class="btn btn-warning">Edit</a>
+                                <p><a href="{{action('PublicationController@edit', $publication->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDel">
-                                        Delete
+                                <i class="fa fa-trash"></i> Delete
                                     </button>
                                 </p>
                                 <!--delete modal-->
@@ -74,7 +74,7 @@
                                                 <form action="{{action('PublicationController@destroy', $publication->id)}}" method="post">
                                                     @csrf
                                                     <input name="_method" type="hidden" value="DELETE">
-                                                    <button class="btn btn-danger" type="submit">Yes</button>
+                                                    <button class="btn btn-danger" type="submit"><span class="glyphicon glyphicon-trash"></span> Yes</button>
                                                 </form>
                                             </div>
                                             </div>

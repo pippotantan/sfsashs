@@ -16,4 +16,16 @@ class Publication extends Model
     public static function authored_by($author){
         return static::where('author', $author)->get();
     }
+
+    //polymorphic relationships
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable')->where('parent_id',0);
+    }
+    //end polymorph
 }

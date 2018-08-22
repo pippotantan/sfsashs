@@ -19,15 +19,15 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"><span class="glyphicon glyphicon-user"></span> {{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-user"></i> {{ __('Login') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-register"> {{ __('Register') }}</a>
                             </li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <i class="fa fa-car"></i> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -58,7 +58,7 @@
     
         <div class="collapse navbar-collapse" id="navbarHead">
             <a class="navbar-brand" href="#" style="color: red;">
-            <img src="{{ asset("../layoutpic/") }}/logo96.png" alt="logo" class="img-fluid rounded-circle hoverable shadow">
+            <img style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="{{ asset("../layoutpic/") }}/logo96.png" alt="logo" class="img-fluid rounded-circle hoverable shadow">
             </a>
             <h3 class="my-0 mr-md-auto font-weight-normal font-weight-bold">STA. FE STAND-ALONE SHS</h3>
             <ul class="navbar-nav">
@@ -76,7 +76,7 @@
 
 
 
-<nav class="navbar navbar-expand-xl navbar-light sticky-top" style="background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(40, 180, 200, .9));">
+<nav class="navbar navbar-expand-xl navbar-light sticky-top" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(40, 180, 200, .9));">
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFull" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -94,17 +94,26 @@
                 <i class="fa fa-user-graduate"></i> Strands
                 </a>
                 <div class="dropdown-menu w-100 text-black mt-0" aria-labelledby="navStrand" style="background-color:rgba(40, 180, 200, 0.9);">
+                  <div class="container"><!--sub menu container-->
+                  <div class="row"><!--sub menu row-->
+                  <div class="col-sm-8"><!--sub menu cols-->
                     <a class="dropdown-item" href="#">Accountancy Business and Management</a>
                     <a class="dropdown-item" href="#">ICT-Computer Sysytems Servicing</a>
                     <a class="dropdown-item" href="#">ICT-Computer Programming</a>
                     <a class="dropdown-item" href="#">General Academic Strand</a>
                     <a class="dropdown-item" href="#">Organic Agriculture</a>
                     <a class="dropdown-item" href="#">Caregiving</a>
+                  </div><!--sub menu cols-8 end-->
+                  <div class="col-sm-4 bg-white">
+                    Content Pop here
+                  </div>
+                  </div><!--sub menu row ends-->
+                  </div><!--sub menu container ends-->
                     <div class="dropdown-divider"></div>
                     <div class="bg-dark text-white pl-2 font-weight-bold">BE ONE OF OUR FUTURE PROFESSIONALS</div>
                 </div>
             </li>
-
+            
             <li class="nav-item dropdown position-static">
                 <a class="nav-link dropdown-toggle" href="#" id="navGlance" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-school"></i> School at a Glance

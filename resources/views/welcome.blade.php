@@ -3,14 +3,12 @@
 @section('title', 'Home')
 
 @section('content')
-
-    
 <!--Main Content-->
 <!-- Heading Row -->
 <div class="row my-4">
         <div class="col-lg-8">
         <!-- Carousel-->
-        <div id="main" class="carousel slide" data-ride="carousel">
+        <div id="main" class="carousel slide lambong" data-ride="carousel">
 
             <!-- Indicators -->
             <ul class="carousel-indicators">
@@ -58,7 +56,7 @@
         </div>
         <!-- /.col-lg-8 -->
         <div class="col-md-4 mb-4">
-          <div class="card h-100">
+          <div class="card h-100 lambong">
             <div class="card-body">
               <h2 class="card-title">Principal's Message</h2>
               <img class="img-fluid d-block mx-auto float-right px-2" src="http://placehold.it/200x200" alt="">
