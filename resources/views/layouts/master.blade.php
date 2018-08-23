@@ -25,6 +25,9 @@
                     <!--  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>-->
                     <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> 
             </div>
+
+            <img class="w-25 topPic" src="{{ asset("../layoutpic/") }}/students2.png">
+        
     
     <div class='container px-2'>
                     

@@ -97,13 +97,9 @@
       
           <!--comment area-->
           
-        @if( @$commentCount > 1 )
-          <small class="text-muted">{{$commentCount}} comments</small>
-        @elseif( @$commentCount == 1 )
-          <small class="text-muted">{{$commentCount}} comment</small>
-        @else
-          <small class="text-muted">Be the first to comment on this article!</small>
-        @endif
+         @if( $publication->comments->count() < 1 )
+                    <strong class="text-muted">Be the first to comment!</strong>
+         @endif
 
       <div class="w-50">
                 <hr />
@@ -112,7 +108,7 @@
                     <form method="post" action="{{ route('comment.add') }}">
                         @csrf
                         <div class="form-group">
-                            <input type="text" name="comment_body" class="form-control" />
+                            <input type="text" name="comment_body" class="form-control" required/>
                             <input type="hidden" name="pub_id" value="{{ $publication->id }}" />
                         </div>
                         <div class="form-group">

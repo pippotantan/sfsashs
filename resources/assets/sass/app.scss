@@ -77,3 +77,19 @@ body {margin-left:1px;}
   font-size: 20px;
 }
 
+//top stud pic
+
+.topPic {
+  position: absolute;
+  top: 18%;
+  right:42%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 4;
+ 
+}
+
+.toggler{
+  text-decoration: none;
+}

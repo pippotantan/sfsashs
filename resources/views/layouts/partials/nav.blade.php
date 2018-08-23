@@ -19,22 +19,22 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-user"></i> {{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}"><i class="fa fa-lock"></i> {{ __('Login') }}</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-register"> {{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}"><i class="fa fa-book"></i> {{ __('Register') }}</a>
                             </li>
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-car"></i> {{ Auth::user()->name }} <span class="caret"></span>
+                                <i class="fa fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <i class="fa fa-power-off"></i> {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -54,13 +54,12 @@
     <div class="navbar navbar-expand-xl navbar-light bg-white p-3 border-bottom border-info">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHead" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
-    
+        </button>    
         <div class="collapse navbar-collapse" id="navbarHead">
-            <a class="navbar-brand" href="#" style="color: red;">
-            <img style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);" src="{{ asset("../layoutpic/") }}/logo96.png" alt="logo" class="img-fluid rounded-circle hoverable shadow">
+            <a class="navbar-brand" href="/" style="color: red;">
+            <img src="{{ asset("../layoutpic/") }}/logo96.png" alt="logo" class="img-fluid rounded-circle hoverable lambong">
             </a>
-            <h3 class="my-0 mr-md-auto font-weight-normal font-weight-bold">STA. FE STAND-ALONE SHS</h3>
+            <h5 class="my-0 mr-md-auto font-weight-normal font-weight-bold">STA. FE STAND-ALONE SHS</h5>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#">Students</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Parents</a></li>
@@ -68,7 +67,7 @@
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>
     </div>
@@ -76,7 +75,7 @@
 
 
 
-<nav class="navbar navbar-expand-xl navbar-light sticky-top" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(40, 180, 200, .9));">
+<nav class="navbar navbar-expand-xl navbar-light sticky-top lambong" style="background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(40, 180, 200, .9));">
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFull" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
