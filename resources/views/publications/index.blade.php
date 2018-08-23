@@ -30,21 +30,26 @@
             <div class="jumbotron">
                 <h1>School Publications</h1>
                 {{ $publications->links() }}
-                <div class="card-columns">
+               
                 @foreach($publications as $publication)
                 
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ asset("../images/thumbnail/") }}/{{$publication->pubpic}}" alt="{{$publication->title}}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$publication->title}}</h5>
-                            <p class="text-muted"><small>{{$publication->datepub}}</small></p>        
-                            <p class="card-text">{!!substr($publication->body, 0, 150)!!}...
-                            <small><a href="/publications/{{$publication->id}}">continue reading</a></small>
-                            </p>
+                    <div class="card">
+                        <div class="row no-gutters">
+                            <div class="col-auto">
+                                <img class="img-fluid" src="{{ asset("../images/thumbnail/") }}/{{$publication->pubpic}}" alt="{{$publication->title}}">
+                            </div>
+                            <div class="col">
+                                <div class="card-block px-2">
+                                    <h5 class="card-title">{{$publication->title}}</h5>
+                                    <strong class="text-muted">by: {{$publication->author}} <small>{{$publication->datepub}}</small></strong>
+                                    <p class="text-muted"><small>{{$publication->datepub}}</small></p>        
+                                    <p class="card-text">{!!substr($publication->body, 0, 150)!!}...
+                                        <small><a href="/publications/{{$publication->id}}">continue reading</a></small>
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-footer">
-                            
-                            <small class="text-muted">by: {{$publication->author}}</small>
                             @auth
                                 <p><a href="{{action('PublicationController@edit', $publication->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
                                 <!-- Button trigger modal -->
@@ -83,9 +88,8 @@
                         @endauth 
                         <!--end delete modal-->
                         </div>
-                </div>
-                @endforeach
-                </div>
+                    </div>
+                    @endforeach
                 {{ $publications->links() }}
            </div>
             

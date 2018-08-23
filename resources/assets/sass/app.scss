@@ -91,6 +91,10 @@ body {margin-left:1px;}
  
 }
 
-.toggler{
+a{
   text-decoration: none;
+}
+.toggler:hover{
+  color:#bb0000;
+  border: 1px solid #55ACEE;
 }

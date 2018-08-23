@@ -12881,7 +12881,12 @@ body {
   z-index: 4;
 }
 
-.toggler {
+a {
   text-decoration: none;
+}
+
+.toggler:hover {
+  color: #bb0000;
+  border: 1px solid #55ACEE;
 }
 
