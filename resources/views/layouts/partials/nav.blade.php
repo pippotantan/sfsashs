@@ -75,7 +75,7 @@
 
 
 
-<nav class="navbar navbar-expand-xl navbar-light sticky-top lambong" style="background: linear-gradient(to bottom, rgba(255,255,255,1), rgba(40, 180, 200, .9));">
+<nav class="navbar navbar-expand-xl navbar-light sticky-top lambong" style="background: linear-gradient(to bottom, rgb(255,255,255), rgb(40, 180, 200));">
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFull" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
