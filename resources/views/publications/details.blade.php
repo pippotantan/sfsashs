@@ -17,7 +17,7 @@
         <div class="col-lg-8">
 
           <!-- Preview Image -->
-          <img class="card-img-top" src="{{ asset("../images/") }}/{{$publication->pubpic}}" alt="{{$publication->title}}">
+          <img class="card-img-top w-75" src="{{ asset("../images/") }}/{{$publication->pubpic}}" alt="{{$publication->title}}">
 
           <hr>
           <h2 class="blog-post-title">{{$publication->title}}</h2>

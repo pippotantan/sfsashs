@@ -12883,10 +12883,11 @@ body {
 
 a {
   text-decoration: none;
+  color: #bb0000;
 }
 
 .toggler:hover {
-  color: #bb0000;
+  color: #1178a1;
   border: 1px solid #55ACEE;
 }
 

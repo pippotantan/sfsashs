@@ -42,7 +42,6 @@
                                 <div class="card-block px-2">
                                     <h5 class="card-title">{{$publication->title}}</h5>
                                     <strong class="text-muted">by: {{$publication->author}} <small>{{$publication->datepub}}</small></strong>
-                                    <p class="text-muted"><small>{{$publication->datepub}}</small></p>        
                                     <p class="card-text">{!!substr($publication->body, 0, 150)!!}...
                                         <small><a href="/publications/{{$publication->id}}">continue reading</a></small>
                                     </p>
@@ -53,7 +52,7 @@
                             @auth
                                 <p><a href="{{action('PublicationController@edit', $publication->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDel">
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDel{{$publication->id}}">
                                 <i class="fa fa-trash"></i> Delete
                                     </button>
                                 </p>
@@ -61,7 +60,7 @@
                                   
 
                                     <!-- Modal -->
-                                        <div class="modal fade" id="confirmDel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal fade" id="confirmDel{{$publication->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                             <div class="modal-header">
