@@ -33,8 +33,13 @@ Route::get('/faculty', 'PagesController@faculty');//->middleware('auth');
 //Route::get('publications/{id}', 'PublicationController@show');
 
 route::resource('publications','PublicationController');
+
+route::resource('strands','StrandController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
+
+Route::get('/fetch/strand', 'DataFetchController@fetch_strand_data')->name('fetch.strand');

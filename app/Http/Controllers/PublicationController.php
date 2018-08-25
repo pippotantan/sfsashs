@@ -75,17 +75,16 @@ class PublicationController extends Controller
            $thumbnailImage = Image::make($originalImage);
            $thumbnailPath = public_path().'/images/thumbnail/';
            $originalPath = public_path().'/images/';
-           $thumbnailImage->heighten(180, function ($constraint){
-            $constraint->upsize();
-        });
-          // $thumbnailImage->resize(150,82.5);
-          
-           $thumbnailImage->save($originalPath.$name);
-           $thumbnailImage->heighten(200, function ($constraint){
-            $constraint->upsize();
-        });
-            $thumbnailImage->save($thumbnailPath.$name); 
-   
+           $thumbnailImage->resize(900, 600, function ($constraint){
+            $constraint->aspectRatio();
+         });
+            $thumbnailImage->save($originalPath.$name);
+           
+            $thumbnailImage->resize(200, 200, function ($constraint){
+            $constraint->aspectRatio();
+         });
+             $thumbnailImage->save($thumbnailPath.$name); 
+    
         //}
         
        $publication= new \App\Publication;
@@ -140,16 +139,16 @@ class PublicationController extends Controller
            $thumbnailImage = Image::make($originalImage);
            $thumbnailPath = public_path().'/images/thumbnail/';
            $originalPath = public_path().'/images/';
-           $thumbnailImage->heighten(180, function ($constraint){
-            $constraint->upsize();
-        });
-          
-           $thumbnailImage->save($originalPath.$name);
-           $thumbnailImage->heighten(200, function ($constraint){
-            $constraint->upsize();
-        });
-            $thumbnailImage->save($thumbnailPath.$name); 
-   
+           $thumbnailImage->resize(900, 600, function ($constraint){
+            $constraint->aspectRatio();
+         });
+            $thumbnailImage->save($originalPath.$name);
+           
+            $thumbnailImage->resize(200, 200, function ($constraint){
+            $constraint->aspectRatio();
+         });
+             $thumbnailImage->save($thumbnailPath.$name); 
+    
         //}
 
                 

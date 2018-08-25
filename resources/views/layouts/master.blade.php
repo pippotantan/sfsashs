@@ -44,10 +44,42 @@
                 $(this).remove(); 
                 });
             }, 4000);
+
+                    
+
         </script>
 
         <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
       <script>CKEDITOR.replace('body');</script>
+
+            <script>
+                $(document).ready(function(){
+
+                    getStrands();
+                    
+                    function getStrands(query = '')
+                    {
+                        $.ajax({
+                        url:"{{ route('fetch.strand') }}",
+                        method:'GET',
+                        data:{query:query},
+                        dataType:'json',
+                        success:function(data)
+                            {
+                                $('#footstrand').html(data.footer_strand_data);
+                                $('.carousel-indicators').html(data.corousel_indic_data);
+                                $('.carousel-inner').html(data.strand_corou_data);
+                            
+                            }
+                    })
+                    }
+
+                $(document).on('keyup', '#search', function(){
+                    //var query = $(this).val();
+                    getStrands();
+                    });
+                });
+            </script>
 
     </body>
 </html>

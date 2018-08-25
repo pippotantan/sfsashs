@@ -1,12 +1,12 @@
 
 @extends('layouts.master')
 
-@section('title', 'School Publication')
+@section('title', 'Edit Strands')
 
 @section('content')
 
 <div class="container">
-      <h2>Publish New Article</h2><br/>
+      <h2>Edit Strand</h2><br/>
 
       @if (count($errors) > 0)
       <div class="alert alert-danger">
@@ -19,39 +19,31 @@
       </div>
       @endif
 
-      <form method="post" action="{{action('PublicationController@update', $id)}}" enctype="multipart/form-data">
+      <form method="post" action="{{action('StrandController@update', $id)}}" enctype="multipart/form-data">
        
         @csrf
         <input name="_method" type="hidden" value="PATCH">
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <label for="title">Title:</label>
-            <input type="text" class="form-control" name="title" value="{{old('title') ? old('title'):$publication->title}}" required>
+            <label for="strand">Strand Name:</label>
+            <input type="text" class="form-control" name="strand" value="{{old('strand') ? old('strand'):$strand->strand}}" required>
         </div>
         </div>
         
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <label for="author">Author:</label>
-            <input type="text" class="form-control" name="author" value="{{old('author') ? old('author'): $publication->author}}" required>
+            <label for="short_desc">Short Description:</label>
+            <input type="text" class="form-control" name="short_desc" value="{{old('short_desc') ? old('short_desc'): $strand->short_desc}}" required>
         </div>
         </div>
         
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <label for="datepub">Date Published:</label>
-            <input type="date" class="form-control" name="datepub" value="{{old('datepub') ? old('datepub'):$publication->datepub}}" required>
-        </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="form-group col-md-4">
-            <label for="body">Body:</label>
-            <textarea id = "body" type="text" class="form-control" name="body" required>{{old('body') ? old('body'):$publication->body}}</textarea>
+            <label for="long_desc">Body:</label>
+            <textarea id = "body" type="text" class="form-control" name="long_desc" required>{{old('long_desc') ? old('long_desc'):$strand->long_desc}}</textarea>
         </div>
         </div>
         
@@ -59,7 +51,7 @@
         <div class="row">
           <div class="col-md-4"></div>
           <div class="form-group col-md-4">
-            <input type="file" name="filename">    
+            <input type="file" name="image">    
          </div>
         </div>
 
@@ -67,7 +59,7 @@
           <div class="col-md-4"></div>
           <div class="form-group col-md-4" style="margin-top:60px">
             <button type="submit" class="btn btn-success">Update</button>
-            <a class="btn btn-info" href="/publications/">Cancel</a>
+            <a class="btn btn-info" href="/strands/">Cancel</a>
           </div>
         </div>
       </form>

@@ -15,6 +15,11 @@ class CreateStrandsTable extends Migration
     {
         Schema::create('strands', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('strand');
+            $table->string('short_desc');
+            $table->longText('long_desc');
+            $table->string('strandpic');
+            $table->string('created_by');
             $table->timestamps();
         });
     }

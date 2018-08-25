@@ -30,24 +30,26 @@
           <!-- Links -->
           <h6 class="text-uppercase font-weight-bold">Strands Offered</h6>
           <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-          <p>
-            <a href="#!"><i class="fa fa-chart-pie"></i> ABM</a>
-          </p>
-          <p>
-            <a href="#!"><i class="fa fa-laptop-code"></i> ICT - Programming</a>
-          </p>
-          <p>
-            <a href="#!"><i class="fa fa-screwdriver"></i> ICT - CSS</a>
-          </p>
-          <p>
-            <a href="#!"><i class="fa fa-graduation-cap"></i> GAS</a>
-          </p>
-          <p>
-            <a href="#!"><i class="fa fa-leaf"></i> OA</a>
-          </p>
-          <p>
-            <a href="#!"><i class="fa fa-heartbeat"></i> Caregiving</a>
-          </p>
+            <div id="footstrand">
+              <p>
+                <a href="#!"><i class="fa fa-chart-pie"></i> ABM</a>
+              </p>
+              <p>
+                <a href="#!"><i class="fa fa-laptop-code"></i> ICT - Programming</a>
+              </p>
+              <p>
+                <a href="#!"><i class="fa fa-screwdriver"></i> ICT - CSS</a>
+              </p>
+              <p>
+                <a href="#!"><i class="fa fa-graduation-cap"></i> GAS</a>
+              </p>
+              <p>
+                <a href="#!"><i class="fa fa-leaf"></i> OA</a>
+              </p>
+              <p>
+                <a href="#!"><i class="fa fa-heartbeat"></i> Caregiving</a>
+              </p>
+            </div>
         </div>
         <!-- Grid column -->
 

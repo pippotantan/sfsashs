@@ -66,7 +66,7 @@
                 <li class="nav-item"><a class="nav-link" href="#">Teachers</a></li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
                 <button class="btn btn-outline-info my-2 my-sm-0" type="submit"><i class="fa fa-search"></i></button>
             </form>
         </div>

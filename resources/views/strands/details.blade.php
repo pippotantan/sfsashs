@@ -6,7 +6,7 @@
     }
 </style>
 
-@section('title', 'School Publication - ' . $publication->title)
+@section('title', 'Strand - ' . $strand->strand)
 
 @section('content')
 
@@ -17,17 +17,18 @@
         <div class="col-lg-8">
 
           <!-- Preview Image -->
-          <img class="card-img-top w-75" src="{{ asset("../images/") }}/{{$publication->pubpic}}" alt="{{$publication->title}}">
+          <img class="card-img-top w-25" src="{{ asset("../images/") }}/{{$strand->strandpic}}" alt="{{$strand->strand}}">
 
           <hr>
-          <h2 class="blog-post-title">{{$publication->title}}</h2>
+          <h2 class="">{{$strand->strand}}</h2>
           <!-- Date/Time -->
-          <p>{{$publication->datepub}} by <a href="#">{{$publication->author}}</a></p>
-
+          <p>created/updated by <a href="#">{{$strand->created_by}}</a></p>
           <hr>
+
+          <h5>{{$strand->short_desc}}</h5>
 
           <!-- Post Content -->
-          <p class="lead">{!!$publication->body!!}</p>
+          <p class="lead">{!!$strand->long_desc!!}</p>
 
         </div>    
 
@@ -94,45 +95,5 @@
 
       </div>
       <!-- /.row -->
-      
-          <!--comment area-->
-          
-         @if( $publication->comments->count() < 1 )
-                    <strong class="text-muted">Be the first to comment!</strong>
-         @endif
-
-      <div class="w-50">
-                <hr />
-                    @auth
-                    <p>Comment as <small class="text-muted">{{ Auth::user()->name }}</p></p>
-                    <form method="post" action="{{ route('comment.add') }}">
-                        @csrf
-                        <div class="form-group">
-                            <input type="text" name="comment_body" class="form-control" required/>
-                            <input type="hidden" name="pub_id" value="{{ $publication->id }}" />
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" class="btn btn-warning btn-sm" value="Post Comment" />
-                        </div>
-                    </form>
-                    @else
-                    
-                    <a class="btn btn-info btn-sm" href="{{ route('login') . '?previous=' . Request::fullUrl() }}">
-                        Login to comment...
-                    </a>
-                    @endauth
-
-                          @include('layouts.partials._comment_replies', ['comments' => $publication->comments, 'pub_id' => $publication->id])
-          
-                    <!--single comment
-                    @foreach($publication->comments as $comment)
-                        <div class="display-comment">
-                            <strong>{{ $comment->user->name }}</strong>
-                            <p>{{ $comment->body }}</p>
-                        </div>
-                    @endforeach
-                    -->
-          </div>
-          <!--end comment area-->
 <!--end new layout-->
 @endsection
