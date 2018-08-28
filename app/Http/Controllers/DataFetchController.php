@@ -35,8 +35,8 @@ class DataFetchController extends Controller
                         <div class="carousel-item '. $cls.'">
                             <img class="img-fluid rounded d-block h-100" src="'.$pic.'" alt="">
                             <div class="carousel-caption d-none d-md-block">
-                                <h3>' . $strand->strand . '</h3>
-                                <p>' . $strand->short_desc . '</p>
+                                <a class="btn btn-outline-info" href="/strands/'.$strand->id.'">' . $strand->strand . '</a>
+                                <p style="text-shadow:2px 2px 4px #000000">' . $strand->short_desc . '</p>
                             </div>
                         </div>
                     ';
