@@ -12881,13 +12881,29 @@ body {
   z-index: 4;
 }
 
-a {
+.toggler {
   text-decoration: none;
-  color: #bb0000;
+  color: #0f054b;
+  padding: 5px;
+  margin-bottom: 3px;
 }
 
 .toggler:hover {
   color: #1178a1;
-  border: 1px solid #55ACEE;
+  background-color: #55ACEE;
+  color: white;
 }
+
+/*
+.carousel-item img {
+
+  height: 480px;
+  width: 600px;
+  //min-height: 300px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
 

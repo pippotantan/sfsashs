@@ -26,14 +26,14 @@ class DataFetchController extends Controller
                     
                     $strand_foot.= '
                         <p>
-                            <a href=/strands/' . $strand->id. '><i class="fa fa-chart-pie"></i>' . $strand->strand . '</a>
+                            <a href=/strands/' . $strand->id. '>' . $strand->strand . '</a>
                         </p>
                     ';
                     
                     $pic = asset("../images/") . '/' . $strand->strandpic;
                     $strand_corousel .= '
                         <div class="carousel-item '. $cls.'">
-                            <img class="img-fluid rounded d-block w-75" src="'.$pic.'" alt="">
+                            <img class="img-fluid rounded d-block h-100" src="'.$pic.'" alt="">
                             <div class="carousel-caption d-none d-md-block">
                                 <h3>' . $strand->strand . '</h3>
                                 <p>' . $strand->short_desc . '</p>

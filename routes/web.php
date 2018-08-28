@@ -43,3 +43,4 @@ Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 
 Route::get('/fetch/strand', 'DataFetchController@fetch_strand_data')->name('fetch.strand');
+

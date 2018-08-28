@@ -39,12 +39,7 @@
         <script src="{{ asset('js/app.js') }}"></script>
         <!-- Alert -->
         <script>
-            window.setTimeout(function() {
-                $(".jojofader").fadeTo(500, 0).slideUp(500, function(){
-                $(this).remove(); 
-                });
-            }, 4000);
-
+        
                     
 
         </script>
@@ -74,11 +69,28 @@
                     })
                     }
 
-                $(document).on('keyup', '#search', function(){
+                $(document).on('keyup', '#search1', function(){
                     //var query = $(this).val();
                     getStrands();
                     });
                 });
+
+                window.setTimeout(function() {
+                    $(".jojofader").fadeTo(500, 0).slideUp(500, function(){
+                    $(this).remove(); 
+                    });
+                }, 4000);
+
+                $('#startdate').datepicker({ 
+                    autoclose: true,   
+                    format: 'yyyy-mm-dd'  
+                });
+                $('#enddate').datepicker({ 
+                    autoclose: true,   
+                    format: 'yyyy-mm-dd'
+                }); 
+
+
             </script>
 
     </body>

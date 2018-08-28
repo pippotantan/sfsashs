@@ -19,27 +19,9 @@
 
             <!-- The slideshow -->
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
-                  <div class="carousel-caption d-none d-md-block">
-                      <h3>First Slide</h3>
-                      <p>This is a description for the first slide.</p>
-                  </div>
-              </div>
-              <div class="carousel-item">
-                  <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
-                  <div class="carousel-caption d-none d-md-block">
-                      <h3>Second Slide</h3>
-                      <p>This is a description for the second slide.</p>
-                  </div>
-              </div>
-              <div class="carousel-item">
-                  <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
-                  <div class="carousel-caption d-none d-md-block">
-                      <h3>Third Slide</h3>
-                      <p>This is a description for the third slide.</p>
-                  </div>
-              </div>
+            
+            <img src="{{ asset("../layoutpic/") }}/loader.gif" alt="loading" class="img-fluid ml-10">
+            
             </div>
 
             <!-- Left and right controls -->

@@ -13,7 +13,14 @@ class StrandController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+   
+    public function __construct()
+    {
+        $this->middleware('auth')->except('show');
+    }
+
+   
+     public function index()
     {
         $strands = Strand::orderBy('strand', 'asc')->paginate(5);
         return view('strands.index', compact('strands'));
