@@ -1,6 +1,7 @@
 
     <!-- Grid Top -->
-    <div id="app" style="background: linear-gradient(to bottom, rgba(40, 180, 200, 1), rgba(255,255,255,1));" class="container-fluid text-center text-md-right mt-0">
+    <div class="jumbotron-fluid">
+    <div id="app" style="background: linear-gradient(to bottom, rgba(40, 150, 200, 1), rgba(255,255,255,1));" class="container-fluid text-center text-md-right mt-0">
             
     <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
@@ -71,11 +72,11 @@
             </form>
         </div>
     </div>
-      
+</div> <!--main container end-->
 
 
 
-<nav class="navbar navbar-expand-xl navbar-light sticky-top lambong" style="background: linear-gradient(to bottom, rgb(255,255,255), rgb(40, 180, 200));">
+<nav class="navbar navbar-expand-xl navbar-light sticky-top lambong" style="background-color: rgb(40, 150, 200);">
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFull" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -92,20 +93,14 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navStrand" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-user-graduate"></i> Strands
                 </a>
-                <div class="dropdown-menu w-100 text-black mt-0" aria-labelledby="navStrand" style="background-color:rgba(40, 180, 200, 0.9);">
+                <div class="dropdown-menu w-100 text-black mt-0 bgko" aria-labelledby="navStrand">
                   <div class="container"><!--sub menu container-->
                   <div class="row"><!--sub menu row-->
-                  <div class="col-sm-8"><!--sub menu cols-->
-                    <a class="dropdown-item" href="#">Accountancy Business and Management</a>
-                    <a class="dropdown-item" href="#">ICT-Computer Sysytems Servicing</a>
-                    <a class="dropdown-item" href="#">ICT-Computer Programming</a>
-                    <a class="dropdown-item" href="#">General Academic Strand</a>
-                    <a class="dropdown-item" href="#">Organic Agriculture</a>
-                    <a class="dropdown-item" href="#">Caregiving</a>
-                  </div><!--sub menu cols-8 end-->
-                  <div class="col-sm-4 bg-white">
-                    Content Pop here
-                  </div>
+                    <div class="col-sm-8 strand_submenu"><!--sub menu cols-->
+                    </div><!--sub menu cols-8 end-->
+                    <div class="col-sm-4 bg-white">
+                        Content Pop here
+                    </div>
                   </div><!--sub menu row ends-->
                   </div><!--sub menu container ends-->
                     <div class="dropdown-divider"></div>
@@ -117,7 +112,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navGlance" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-school"></i> School at a Glance
                 </a>
-                <div class="dropdown-menu w-100 mt-0" aria-labelledby="navGlance" style="background-color:rgba(40, 180, 200, 0.9);">
+                <div class="dropdown-menu w-100 mt-0 bgko" aria-labelledby="navGlance">
                     <a class="dropdown-item" href="#">History</a>
                     <a class="dropdown-item" href="#">Mission & Vision</a>
                     <a class="dropdown-item" href="/faculty">Faculty & Staff</a>
@@ -134,5 +129,4 @@
         </ul>
     </div>
 </nav>
-
 

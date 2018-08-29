@@ -27,14 +27,14 @@
 
     @if($publications)
        
-            <div class="jumbotron">
+            <div class="jumbotron mt-3">
                 <h1>School Publications</h1>
                 {{ $publications->links() }}
                
                 @foreach($publications as $publication)
                 
                     <div class="card">
-                        <div class="row no-gutters">
+                        <div class="row no-gutters p-2">
                             <div class="col-auto">
                                 <img class="img-fluid" src="{{ asset("../images/thumbnail/") }}/{{$publication->pubpic}}" alt="{{$publication->title}}">
                             </div>
@@ -48,8 +48,9 @@
                                 </div>
                             </div>
                         </div>
+                        @auth
                         <div class="card-footer">
-                            @auth
+                            
                                 <p><a href="{{action('PublicationController@edit', $publication->id)}}" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#confirmDel{{$publication->id}}">
@@ -84,9 +85,10 @@
                                             </div>
                                         </div>
                                         </div> 
-                        @endauth 
+                        
                         <!--end delete modal-->
                         </div>
+                        @endauth 
                     </div>
                     @endforeach
                 {{ $publications->links() }}

@@ -64,6 +64,7 @@
                                 $('#footstrand').html(data.footer_strand_data);
                                 $('.carousel-indicators').html(data.corousel_indic_data);
                                 $('.carousel-inner').html(data.strand_corou_data);
+                                $('.strand_submenu').html(data.strand_sub_menu);
                             
                             }
                     })

@@ -12,6 +12,7 @@ class DataFetchController extends Controller
             $strand_foot = '';
             $strand_corousel = '';
             $carousel_indicator = '';
+            $strand_submenu = '';
             $ctr=0;
 
             $strands = Strand::all();
@@ -29,6 +30,11 @@ class DataFetchController extends Controller
                             <a href=/strands/' . $strand->id. '>' . $strand->strand . '</a>
                         </p>
                     ';
+                  
+                    $strand_submenu.= '
+                        <a class="dropdown-item" href=/strands/' . $strand->id. '>' . $strand->strand . '</a>
+                    ';
+              
                     
                     $pic = asset("../images/") . '/' . $strand->strandpic;
                     $strand_corousel .= '
@@ -49,6 +55,7 @@ class DataFetchController extends Controller
                 }
             }else{
                     $strand_foot .= '<p>No Strands Available</p>';
+                    $strand_submenu .= '<a class="dropdown-item ">No Strands Available</a>';
 
                     $strand_corousel .= '
                     <div class="carousel-item active">
@@ -71,7 +78,9 @@ class DataFetchController extends Controller
             $strands = array(
                 'footer_strand_data' => $strand_foot,
                 'corousel_indic_data' => $carousel_indicator,
-                'strand_corou_data' => $strand_corousel
+                'strand_corou_data' => $strand_corousel,
+                'strand_sub_menu' => $strand_submenu,
+                
                 
             );
 

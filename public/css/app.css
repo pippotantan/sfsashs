@@ -12805,9 +12805,10 @@ a.text-dark:focus {
 }
 
 .navbar-laravel {
-  background-color: #fff;
+  background-color: #22c445;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  color: #55ACEE;
 }
 
 body {
@@ -12892,6 +12893,10 @@ body {
   color: #1178a1;
   background-color: #55ACEE;
   color: white;
+}
+
+.bgko {
+  background-color: rgba(40, 150, 200, 0.6);
 }
 
 /*

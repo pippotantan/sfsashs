@@ -27,7 +27,7 @@
 
     @if($strands)
        
-            <div class="jumbotron">
+            <div class="jumbotron mt-3">
                 <h1>Strands Offered</h1>
                 {{ $strands->links() }}
                

@@ -11,7 +11,7 @@
 @section('content')
 
  <!-- new layout -->
-<div class="row blog-post">
+<div class="row blog-post mt-3">
 
         <!-- Post Content Column -->
         <div class="col-lg-8">
