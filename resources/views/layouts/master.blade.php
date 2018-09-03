@@ -16,6 +16,8 @@
         <link rel="icon" href="{{ asset("../images/") }}/favicon.ico">
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        @yield('links')
+        
         
     <body>
             <div class="icon-bar lambong">
@@ -37,20 +39,14 @@
     </div>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
-        <!-- Alert -->
-        <script>
-        
-                    
-
-        </script>
-
         <script src="{{asset('vendor/unisharp/laravel-ckeditor/ckeditor.js')}}"></script>
-      <script>CKEDITOR.replace('body');</script>
+        <script>CKEDITOR.replace('body');</script>
 
             <script>
                 $(document).ready(function(){
 
                     getStrands();
+                    getActivity();
                     
                     function getStrands(query = '')
                     {
@@ -68,13 +64,36 @@
                             
                             }
                     })
-                    }
+                    } //end function
+                    
+                    function getActivity()
+                    {
+                        $.ajax({
+                        url:"{{ route('fetch.activity') }}",
+                        method:'GET',
+                        success:function(data)
+                            {
+                                //$('#calendar').html(data);
+                                $('#calendar').fullCalendar({
+                                    header: null,
+                                    events: $.parseJSON(data),
+                                    });
+                                
+                                    
+                                
+                            },
+                        error: function(){
+                            $('#calendar').html('No events posted!');
+                        }
+                    })
+                    } //end function
 
-                $(document).on('keyup', '#search1', function(){
+                //$(document).on('keyup', '#search1', function(){
                     //var query = $(this).val();
-                    getStrands();
-                    });
-                });
+                //    getStrands();
+                //    });
+
+                }); //end document ready function
 
                 window.setTimeout(function() {
                     $(".jojofader").fadeTo(500, 0).slideUp(500, function(){
@@ -82,17 +101,10 @@
                     });
                 }, 4000);
 
-                $('#startdate').datepicker({ 
-                    autoclose: true,   
-                    format: 'yyyy-mm-dd'  
-                });
-                $('#enddate').datepicker({ 
-                    autoclose: true,   
-                    format: 'yyyy-mm-dd'
-                }); 
-
-
             </script>
+
+        @yield('jscripts')
+        
 
     </body>
 </html>

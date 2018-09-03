@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Strand;
+use App\SchoolActivity;
 
 class DataFetchController extends Controller
 {
@@ -17,9 +18,9 @@ class DataFetchController extends Controller
 
             $strands = Strand::all();
 
-            $strand_count = $strands->count();
+            //$strand_count = $strands->count();
 
-            if($strand_count>0){
+            if($strands->count()>0){
                 
                 foreach($strands as $strand){
                     
@@ -87,6 +88,32 @@ class DataFetchController extends Controller
             echo json_encode($strands);
 
         }
-    }
+    }//function end
+
+    function fetch_activity_data(Request $request){
+        
+        if($request->ajax()){
+           
+            
+            $activities = SchoolActivity::all();
+
+               $e = array();
+
+               foreach($activities as $activity){
+
+                $e[] = [
+                        'id' => $activity->id,
+                        'title' => $activity->title,
+                        'start' => $activity->start_date,
+                        'end' => $activity->end_date,
+                        'url' => 'activities/'. $activity->id,                                                        
+                    ];
+
+                }
+            //echo $e;
+           echo json_encode($e);
+
+        }//ajax request if end
+    }//function end
 }
 

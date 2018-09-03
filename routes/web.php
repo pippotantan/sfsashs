@@ -32,9 +32,9 @@ Route::get('/faculty', 'PagesController@faculty');//->middleware('auth');
 
 //Route::get('publications/{id}', 'PublicationController@show');
 
-route::resource('publications','PublicationController');
+Route::resource('publications','PublicationController');
 
-route::resource('strands','StrandController');
+Route::resource('strands','StrandController');
 
 Auth::routes();
 
@@ -43,4 +43,6 @@ Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 
 Route::get('/fetch/strand', 'DataFetchController@fetch_strand_data')->name('fetch.strand');
+Route::get('/fetch/activity', 'DataFetchController@fetch_activity_data')->name('fetch.activity');
 
+Route::resource('activities','SchoolActivityController');

@@ -2,6 +2,10 @@
 
 @section('title', 'Home')
 
+@section('links')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
+@endsection
+
 @section('content')
 <!--Main Content-->
 <!-- Heading Row -->
@@ -13,8 +17,6 @@
             <!-- Indicators -->
             <ul class="carousel-indicators">
             <li data-target="#main" data-slide-to="0" class="active"></li>
-            <li data-target="#main" data-slide-to="1"></li>
-            <li data-target="#main" data-slide-to="2"></li>
             </ul>
 
             <!-- The slideshow -->
@@ -76,11 +78,11 @@
         <div class="col-md-4 mb-4">
           <div class="card h-100">
             <div class="card-body">
-              <h2 class="card-title">Event Calendar</h2>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt pariatur voluptatem sunt quam eaque, vel, non in id dolore voluptates quos eligendi labore.</p>
+              <h2 class="card-title">School Calendar</h2>
+              <div class="card-text"  id="calendar"></div>
             </div>
             <div class="card-footer">
-              <a href="#" class="btn btn-primary">More Info</a>
+              <a href="/activities" class="btn btn-primary">Show Full Calendar</a>
             </div>
           </div>
         </div>
@@ -102,4 +104,11 @@
       <!-- /.row -->
 <!--End Main Content-->
 
+@endsection
+
+@section('jscripts')
+          <!-- Calendar -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
+    
 @endsection

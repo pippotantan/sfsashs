@@ -2,6 +2,10 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
+// Calendar
+//@import url("https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css");
+
+
 // Variables
 @import "variables";
 
@@ -107,7 +111,7 @@ body {margin-left:1px;}
 }
 
 .bgko{
-  background-color:rgba(40, 150, 200, 0.6);
+  background-color:rgba(40, 150, 200, 0.9);
 }
 
 /*
