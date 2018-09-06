@@ -16,11 +16,14 @@ class CreateStudentsTable extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->increments('id');
             
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('students');
+
             $table->unsignedInteger('strand_id');
             $table->foreign('strand_id')->references('id')->on('strands');
 
-            $table->unsignedInteger('class_id');
-            $table->foreign('class_id')->references('id')->on('classes');
+            $table->unsignedInteger('klass_id');
+            $table->foreign('klass_id')->references('id')->on('klasses');
 
             $table->string('fname');
             $table->string('lname');
@@ -32,9 +35,6 @@ class CreateStudentsTable extends Migration
             $table->string('email');
             $table->text('current_address');
             $table->text('home_address');
-            
-            $table->date('start_date');
-            $table->date('end_date');
             $table->timestamps();
         });
     }
