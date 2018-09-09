@@ -87,11 +87,11 @@ class PublicationController extends Controller
     
         //}
         
-       $publication= new \App\Publication;
-       $publication->title=$request->get('title');
-       $publication->author=$request->get('author');
-       $publication->datepub=$request->get('datepub');
-       $publication->body=$request->get('body');
+       $publication= new Publication($request->all());
+       //$publication->title=$request->get('title');
+       //$publication->author=$request->get('author');
+       //$publication->datepub=$request->get('datepub');
+       //$publication->body=$request->get('body');
        $publication->pubpic=$name;
        
        

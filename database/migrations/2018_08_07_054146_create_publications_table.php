@@ -21,6 +21,7 @@ class CreatePublicationsTable extends Migration
             $table->longText('body');
             $table->string('pubpic');
             $table->boolean('approved')->default(false);
+            $table->boolean('featured')->default(false);
             $table->timestamps();
         });
     }
