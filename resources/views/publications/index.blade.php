@@ -1,4 +1,6 @@
-
+<?php
+use Carbon\Carbon;
+?>
 @extends('layouts.master')
 
 @section('title', 'School Publication')
@@ -41,7 +43,9 @@
                             <div class="col">
                                 <div class="card-block px-2">
                                     <h5 class="card-title">{{$publication->title}}</h5>
-                                    <strong class="text-muted">by: {{$publication->author}} <small>{{$publication->datepub}}</small></strong>
+                                    
+                                    
+                                    <strong class="text-muted">by: {{$publication->author}} <small>{{Carbon::now()->diffForHumans(Carbon::parse($publication->datepub))}}</small></strong>
                                     <p class="card-text">{!!substr($publication->body, 0, 150)!!}...
                                         <small><a href="/publications/{{$publication->id}}">continue reading</a></small>
                                     </p>

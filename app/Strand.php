@@ -9,4 +9,8 @@ class Strand extends Model
     //
     protected $fillable = ['strand', 'short_desc', 'long_desc', 'strandpic', 'create_by'];
 
+    public function students(){
+        return $this->belongsToMany('App\Student');
+    }
+
 }
