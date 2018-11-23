@@ -3,7 +3,6 @@
 @section('title', 'About Us')
 
 @section('content')
-
 <div class="container my-3">
     <div class="row justify-content-center">
         <div class="col-md-8">
